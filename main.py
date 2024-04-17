@@ -110,7 +110,6 @@ def join_credit_usage_with_accounts(credit_usage_count, accounts):
             print("Error: duplicate account ID in join_credit_usage_with_accounts.")
             sys.exit(1)
         acct_id_to_acct_group_dict[a['accountId']] = a['groups']
-    print(acct_id_to_acct_group_dict)
     
     joined_data = []
     for c in credit_usage_count:
@@ -139,7 +138,6 @@ def join_credit_usage_with_accounts(credit_usage_count, accounts):
                 rec['agentless_container'] = c['resourceTypeCount']['agentless_container']
                 
                 joined_data.append(rec)
-    print(joined_data)
     return joined_data
             
 def write_output_file(credits_with_accounts, outfile):
